@@ -10,7 +10,7 @@
       <p class="auth-subtitle">Sign in to continue your journey</p>
     </div>
  
-    <form class="auth-form" novalidate>
+    <form class="auth-form"(ngSubmit)="onSubmit()" novalidate>
       <div class="form-group">
         <label class="form-label" for="email">Email address</label>
         <div class="input-row">
@@ -20,6 +20,8 @@
             class="form-input"
             placeholder="you@example.com"
             autocomplete="email"
+            name="email"
+            [(ngModel)]="email"
             required
           />
         </div>
@@ -34,6 +36,8 @@
             class="form-input"
             placeholder="Enter your password"
             autocomplete="current-password"
+            name="password"
+            [(ngModel)]="password"
             required
           />
           <button type="button" class="toggle-password" aria-label="Toggle password visibility">
