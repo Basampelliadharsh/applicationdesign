@@ -10,7 +10,7 @@
       <p class="auth-subtitle">Join us to start your productive journey</p>
     </div>
 
-    <form class="auth-form" novalidate>
+    <form class="auth-form" (ngSubmit)="onSubmit()" novalidate>
       <div class="form-group">
         <label class="form-label" for="name">Full Name</label>
         <div class="input-row">
@@ -19,6 +19,9 @@
             id="name"
             class="form-input"
             placeholder="John Doe"
+            autocomplete="name"
+            name="name"
+            [(ngModel)]="name"
             required
           />
         </div>
@@ -33,6 +36,8 @@
             class="form-input"
             placeholder="you@example.com"
             autocomplete="email"
+            name="email"
+            [(ngModel)]="email"
             required
           />
         </div>
@@ -47,6 +52,8 @@
             class="form-input"
             placeholder="Create a password"
             autocomplete="new-password"
+            name="password"
+            [(ngModel)]="password"
             required
           />
           <button type="button" class="toggle-password" aria-label="Toggle password visibility">
@@ -67,6 +74,8 @@
             class="form-input"
             placeholder="Confirm your password"
             autocomplete="new-password"
+            name="confirmPassword"
+            [(ngModel)]="confirmPassword"
             required
           />
           <button type="button" class="toggle-password" aria-label="Toggle password visibility">
