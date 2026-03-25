@@ -10,7 +10,7 @@
       <p class="auth-subtitle">Join us to start your productive journey</p>
     </div>
 
-    <form class="auth-form" (ngSubmit)="onSubmit()" novalidate>
+    <form class="auth-form"   [formGroup]="registrationForm"  (ngSubmit)="onSubmit()" novalidate>
       <div class="form-group">
         <label class="form-label" for="name">Full Name</label>
         <div class="input-row">
@@ -19,10 +19,11 @@
             id="name"
             class="form-input"
             placeholder="John Doe"
-            autocomplete="name"
-            name="name"
-            [(ngModel)]="name"
+            
+            name="fullName"
+            
             required
+              formControlName="fullName"
           />
         </div>
       </div>
@@ -37,8 +38,10 @@
             placeholder="you@example.com"
             autocomplete="email"
             name="email"
-            [(ngModel)]="email"
+            
             required
+              formControlName="Email" 
+
           />
         </div>
       </div>
@@ -53,8 +56,9 @@
             placeholder="Create a password"
             autocomplete="new-password"
             name="password"
-            [(ngModel)]="password"
+             
             required
+              formControlName="Password"  
           />
           <button type="button" class="toggle-password" aria-label="Toggle password visibility">
             <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -74,9 +78,10 @@
             class="form-input"
             placeholder="Confirm your password"
             autocomplete="new-password"
-            name="confirmPassword"
-            [(ngModel)]="confirmPassword"
+            name="confirmpassword"
+            
             required
+              formControlName="ConfirmPassword"
           />
           <button type="button" class="toggle-password" aria-label="Toggle password visibility">
             <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

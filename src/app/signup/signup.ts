@@ -1,28 +1,44 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { Router} from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';   
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
-  standalone: true,
-  imports: [FormsModule],
   templateUrl: './signup.html',
+  imports: [ReactiveFormsModule],
   styleUrls: ['./signup.css'],
 })
 export class Signup {
-  name: string = '';
-  email: string = '';
-  password: string = '';
-  confirmPassword: string = '';
+  registrationForm = new FormGroup({
+    fullName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
+    confirmPassword: new FormControl('', Validators.required),
+    agreeTerms: new FormControl(false, Validators.requiredTrue),
+  });
 
-constructor(private router: Router){}
-  onSubmit() {
-    console.log('Name:', this.name);
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    console.log('confirmPassword:', this.confirmPassword);
-    this.router.navigate(['/homepage']);
+  // passwordMatchValidator(form: FormGroup) {
+  //   const password = form.get('password')?.value;
+  //   const confirmPassword = form.get('confirmPassword')?.value;
+  //   return password === confirmPassword ? null : { mismatch: true };  
+  // } 
+
+  constructor(private router: Router) {
+    console.log('Signup form initialized:', this.registrationForm);
   }
 
-  togglePassworddivisibility() {}
+  onSubmit(): void {
+    if (this.registrationForm.invalid) {
+      this.registrationForm.markAllAsTouched();
+      return;
+    }else{
+      console.log('Signup payload:', this.registrationForm.value);
+      this.router.navigate(['/homepage']);
+      // https://localhost:4200/homepage
+    }
+  }
 }
