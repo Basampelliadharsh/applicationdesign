@@ -1,31 +1,46 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CommonModule} from '@angular/common';  
 
 @Component({
   standalone: true,
   selector: 'app-signin',
-  imports: [FormsModule],
+  imports: [CommonModule, ReactiveFormsModule], 
   templateUrl: './signin.html',
-  styleUrls: ['./signin.css'],
+  styleUrl: './signin.css',
 })
 export class Signin {
-  email: string = '';
-  password: string = '';
+  submitted = false;
+  registrationForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]), 
 
-  constructor(private router: Router) {}
+  
+  }
+  );
+  constructor(private router: Router) {
+    console.log('Signin form initialized:', this.registrationForm);
+  }
 
-  onSubmit() {
-    // Handle form submission logic here
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    this.router.navigate(['/signup']);
+
+  onSubmit(): void {
+    this.submitted = true;
+    if (this.registrationForm.invalid) {
+      this.registrationForm.markAllAsTouched();
+      return;
+    }else{
+      console.log('Signin payload:', this.registrationForm.value);
+      this.router.navigate(['/signup']);
+      
+      // https://localhost:4200/signup
+    } 
+    
   }
-  togglePassword(input: HTMLInputElement) {
-    if (input.type === 'password') {
-      input.type = 'text';
-    } else {
-      input.type = 'password';
-    }
-  }
+
+  
 }

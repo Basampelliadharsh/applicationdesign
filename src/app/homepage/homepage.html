@@ -1,7 +1,7 @@
 <div class="homepage">
   <div class="navbar">
     <div class="navbar-brand">Focus on Today</div>
-    <button class="logout-btn">Logout</button>
+    <button (click)="logout()" class="logout-btn">Logout</button>
   </div>
 
   <div class="container">
@@ -17,15 +17,14 @@
         <span>Today's Goals</span>
       </div>
        <div class="goal-row">
-        <input type="text"  placeholder="Add a new goal" class="goal-input"
-        [(ngModel)]="newGoal" />
-        <button  class="add-goal-btn"  (click)="addGoal()">+</button>
+        <input type="text"  [(ngModel)]="newGoal" placeholder="Add a new goal" class="goal-input" />
+        <button  (click)="addGoal()" class="add-goal-btn">+</button>
       </div>
 
-      <div *ngFor="let goal of goals" class="goal-row">
+      <div  *ngFor="let goal of goals" class="goal-row">
         <input type="checkbox" class="goal-checkbox" [(ngModel)]="goal.completed" />
-        <span [class.completed]="goal.completed" class="goal-text">{{ goal.text }}</span>
-        <button  class="delete-btn">✕</button>
+        <span [class.completed]="goal.completed" class="goal-text">{{ goal.text }} </span>
+        <button  (click)="deleteGoal(goal.id)" class="delete-btn">✕</button>
       </div>
     </div>
 

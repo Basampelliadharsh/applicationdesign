@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';   
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +18,7 @@ export class Signup {
       Validators.minLength(6),
     ]),
     confirmPassword: new FormControl('', Validators.required),
-    agreeTerms: new FormControl(false, Validators.requiredTrue),
+    agreeterms: new FormControl(false, Validators.requiredTrue),
   });
 
   // passwordMatchValidator(form: FormGroup) {
@@ -32,12 +32,13 @@ export class Signup {
   }
 
   onSubmit(): void {
-    if (this.registrationForm.invalid) {
+   if (this.registrationForm.invalid) {
       this.registrationForm.markAllAsTouched();
       return;
     }else{
-      console.log('Signup payload:', this.registrationForm.value);
+      console.log('Signin payload:', this.registrationForm.value);
       this.router.navigate(['/homepage']);
+      
       // https://localhost:4200/homepage
     }
   }
