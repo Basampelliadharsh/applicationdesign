@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';   
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
+import { NgIf } from '@angular/common'; 
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.html',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf],
   styleUrls: ['./signup.css'],
 })
 export class Signup {
+  submitted = false;
+
   registrationForm = new FormGroup({
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -32,6 +35,7 @@ export class Signup {
   }
 
   onSubmit(): void {
+    this.submitted = true;
    if (this.registrationForm.invalid) {
       this.registrationForm.markAllAsTouched();
       return;
