@@ -62,13 +62,22 @@ body {
 
 .welcome-section {
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   border: 1px solid #d9e9cc;
 }
 
 .profile-card {
   background-color: #f4f9ef;
-  border: 1px solid #d9e9cc;
+ /* border: 1px solid #d9e9cc;*/
   border-radius: 12px;
   padding: 20px;
+}
+
+.user-location{
+  margin: 20px;
+
 }
 
 .welcome-text {
