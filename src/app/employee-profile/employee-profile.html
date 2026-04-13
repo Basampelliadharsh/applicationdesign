@@ -67,8 +67,32 @@
                 <option value="feature request">future ticket</option>
                 </select>
                 </div>
-                
-
+                <div class="form-group">
+                  <label for="meal" class="field-label"><span class="required">*</span>meal preference</label>
+                  <select formControlName="meal">
+                    <option value="chapathi">chapathi</option>
+                     <option value="rice">rice</option>
+                  </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="meal" class="field-label">
+                      <span class="required">*</span>
+                      Emergency number</label>
+                    <input type="tel" id="Emergencynumber" class="form-input" placeholder="requirednumber" formControlName="Emergencynumber">
+</div>
+<div class="form-field-item">
+  <h2>Travel & location</h2>
+</div>
+<div class="form-group">
+  <label for="Venue city" class="field-label">
+<span class="required">*</span>Venue city</label>
+<input type="text" id="Venue city" class="form-input" placeholder="enter a city" formGroupName="Venue city">
+</div>
+<div class="form-group">
+  <label for="travelling form" class="field-label">
+<span class="required">*</span>travelling form</label>
+<input type="text" id="travelling form" class="form-input" placeholder="enter a city" formGroupName="travelling form">
+</div>
 
 
 
