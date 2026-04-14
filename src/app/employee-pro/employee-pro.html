@@ -1,0 +1,235 @@
+<div class="profile-form-container">
+  <div class="profile-card">
+    <form class="profile-card-form">
+      <h3>job application</h3>
+      <section class="form-section personal-info-section">
+        <h4>candidate details</h4>
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="fullName" class="field-label"
+              >fullName
+
+              <span class="required">*</span>
+            </label>
+            <input
+              id="fullName"
+              type="text"
+              class="form-input"
+              placeholder="Enter your fullName"
+              formControlName="fullName"
+            />
+          </div>
+
+          <div class="form-field-item">
+            <label for="dateOfBirth" class="field-label">
+              Date of Birth
+              <span class="required">*</span>
+            </label>
+            <input
+              id="dateOfBirth"
+              type="text"
+              class="form-input"
+              placeholder="Enter your date of birth"
+              formControlName="dateOfBirth"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="gender" class="field-label">
+              Gender
+              <span class="required">*</span>
+            </label>
+            <select formControlName="gender">
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-field-item">
+            <label for="Experience" class="field-label">
+              Experience(Years)
+
+              <span class="required">*</span>
+            </label>
+            <input
+              id="Experience"
+              type="text"
+              class="form-input"
+              placeholder="Ex:2"
+              formControlName="Experience"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="Linkdin" class="field-label"
+              >Linkdin URL
+
+              <span class="required">*</span>
+            </label>
+            <input
+              id="Linkdin"
+              type="text"
+              class="form-input"
+              placeholder="paste profile URL"
+              formControlName="Linkdin"
+            />
+          </div>
+
+        </div>
+      </section>
+
+      <section class="form-section registration-info-section">
+        <h4>Application details</h4>
+        <div class="form-field-item">
+            <label for="company" class="field-label"
+              >Current Company
+
+              <span class="required">*</span>
+            </label>
+            <input
+              id="Company"
+              type="text"
+              class="form-input"
+              placeholder="Enter company name"
+              formControlName="company"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="CTC" class="field-label"
+              >Expected CTC
+
+              <span class="required">*</span>
+            </label>
+            <input
+              id="CTC"
+              type="text"
+              class="form-input"
+              placeholder="Enter expected CTC"
+              formControlName="CTC"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="Notice" class="field-label"
+              >Notice period days
+
+              <span class="required">*</span>
+            </label>
+            <input
+              id="Notice"
+              type="text"
+              class="form-input"
+              placeholder="EX:30"
+              formControlName="Notice"
+            />
+          </div>
+
+
+
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="email" class="field-label">
+              Mail Id
+              <span class="required">*</span>
+            </label>
+            <input
+              id="email"
+              type="email"
+              class="form-input"
+              placeholder="Enter your email"
+              formControlName="email"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="phoneNumber" class="field-label">
+              Phone Number
+              <span class="required">*</span>
+            </label>
+            <input
+              id="phoneNumber"
+              type="text"
+              class="form-input"
+              placeholder="Enter your phone number"
+              formControlName="phoneNumber"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="form-section address-section">
+        <h4>Address</h4>
+        <div class="form-fields-container" formGroupName="address">
+          <div class="form-field-item">
+            <label for="street" class="field-label">
+              Street
+              <span class="required">*</span>
+            </label>
+            <input
+              id="street"
+              type="text"
+              class="form-input"
+              placeholder="Enter your street"
+              formControlName="street"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="city" class="field-label">
+              City
+              <span class="required">*</span>
+            </label>
+            <input
+              id="city"
+              type="text"
+              class="form-input"
+              placeholder="Enter your city"
+              formControlName="city"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="state" class="field-label">
+              State
+              <span class="required">*</span>
+            </label>
+            <input
+              id="state"
+              type="text"
+              class="form-input"
+              placeholder="Enter your state"
+              formControlName="state"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="zipCode" class="field-label">
+              Zip Code
+              <span class="required">*</span>
+            </label>
+            <input
+              id="zipCode"
+              type="text"
+              class="form-input"
+              placeholder="Enter your zip code"
+              formControlName="zip"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="form-section skills-section">
+        <h4>Technologies</h4>
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="skillInput" class="field-label">Add a skill</label>
+            <div class="skill-input-container">
+              <input
+                id="technology"
+                type="text"
+                class="form-input"
+                placeholder="Enter a technology"
+              />
+              <button type="button" class="add-skill-button">Add</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Submit</button>
+        <button type="reset" class="btn-reset">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
