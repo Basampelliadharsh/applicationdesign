@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmployeeProfile } from './employee-profile';
+import { Libhomepage } from './libhomepage';
 
-describe('EmployeeProfile', () => {
-  let component: EmployeeProfile;
-  let fixture: ComponentFixture<EmployeeProfile>;
+describe('Libhomepage', () => {
+  let component: Libhomepage;
+  let fixture: ComponentFixture<Libhomepage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EmployeeProfile],
+      imports: [Libhomepage],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EmployeeProfile);
+    fixture = TestBed.createComponent(Libhomepage);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

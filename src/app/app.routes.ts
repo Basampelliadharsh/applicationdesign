@@ -6,7 +6,8 @@ import { Libsignin } from './libsignin/libsignin';
 import { Libsignup } from './libsignup/libsignup';
 import { Libhomepage } from './libhomepage/libhomepage';
 import { ProfileFormPractice } from './profile-form-practice/profile-form-practice';
-import { EmployeeProfile } from './employee-profile/employee-profile';
+import { EmployeePro } from './employee-pro/employee-pro';
+
 
 export const routes: Routes = [
   { path: 'homepage', component: Homepage },
@@ -16,5 +17,5 @@ export const routes: Routes = [
   { path: 'libsignup', component: Libsignup },
   { path: 'libsignin', component: Libsignin },
   { path: 'profile-form-practice', component: ProfileFormPractice },
-  {path: 'employee-profile', component: EmployeeProfile },  
+  { path: 'employee-pro', component: EmployeePro },
 ];
