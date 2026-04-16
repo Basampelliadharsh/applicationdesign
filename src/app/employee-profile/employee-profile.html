@@ -1,0 +1,102 @@
+<form class="form-container">
+  <div class="form-title">
+    <h2>Job Application</h2>
+  
+      <div class="form-field-item">
+      <h1>Attendee</h1>
+</div>
+  </div>
+  <div class="form-group">
+    <label for="fullName" class="field-label">FullName
+      <span class="required">*</span>
+    </label>
+    <input id="fullName" type="text" class="form-input" placeholder="enter your fullname" formControlName="fullName"/>
+    </div>
+  <div class="form-group">
+    <label for="date of Birth" class="field-label">
+      Date of Birth
+      <span class="required">*</span></label
+    >
+    <input id="dateofBirth" type="date"class="form-input" placeholder="enter your date of Birth"
+    formControlName="date of Birth"/>
+  </div>
+  <div class="form-group">
+    <label for="gender" class="field-label">
+      Gender <span class="required">*</span></label>
+      <select formControlName="gender">
+        <option value=""disabled selected>select your gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label for="Experience" class="field-label">Experience (years)
+          <span class="required">*</span></label>
+          <input id="Experience" type="number" class="form-input" placeholder="example 2" formControlName="Experience"/>
+          </div>
+          <div class="form-group">
+          <label for="linkdin" class="form-input">linkdin URL
+            <span class="required">*</span>
+            </label>
+            <input id="linkdin" class="form-input" placeholder="paste profile url" formControlName="Linkdin"/>
+          </div>
+          <div class="form-field-item">
+            <h1>Application Details</h1>
+          </div>
+          <div class="form-group">
+            <label for="email" class="field-label">
+              email
+<span class="required">*</span>
+          </label>
+          <input id="email" type="email" class="form-input" placeholder="enter email" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="phonenumber" class="field-label">
+              phonenumber
+              </label>
+              <span class="required">*</span>
+              <input id="phonenumber" type="tel" class="form-input" placeholder="enter phonenumber" formControlName="phonenumber ">
+          </div>
+          <div class="form-group">
+            <label for="ticket" class="field-label">
+              ticket
+              <span class="required">*</span>
+              </label>
+              <select formControlName="ticket">
+                <option value="bugs fixing">bug fixing</option>
+                <option value="feature request">future ticket</option>
+                </select>
+                </div>
+                <div class="form-group">
+                  <label for="meal" class="field-label"><span class="required">*</span>meal preference</label>
+                  <select formControlName="meal">
+                    <option value="chapathi">chapathi</option>
+                     <option value="rice">rice</option>
+                  </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="meal" class="field-label">
+                      <span class="required">*</span>
+                      Emergency number</label>
+                    <input type="tel" id="Emergencynumber" class="form-input" placeholder="requirednumber" formControlName="Emergencynumber">
+</div>
+<div class="form-field-item">
+  <h2>Travel & location</h2>
+</div>
+<div class="form-group">
+  <label for="Venue city" class="field-label">
+<span class="required">*</span>Venue city</label>
+<input type="text" id="Venue city" class="form-input" placeholder="enter a city" formGroupName="Venue city">
+</div>
+<div class="form-group">
+  <label for="travelling form" class="field-label">
+<span class="required">*</span>travelling form</label>
+<input type="text" id="travelling form" class="form-input" placeholder="enter a city" formGroupName="travelling form">
+</div>
+
+
+
+
+      
+    
+</form>
