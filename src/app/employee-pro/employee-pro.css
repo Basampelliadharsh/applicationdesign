@@ -23,18 +23,18 @@
     font-weight: 600;
 }
 .form-fields-container {
-    display: flex;
-    flex-wrap:wrap ;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
     margin-top: 10px;
-
-
 }
 .form-field-item{
     display: flex;
     flex-direction: column;
-    flex: 0 1 calc(3333.333%-7px);
     gap: 4px;
+}
+.form-field-item:nth-child(n+4) {
+    grid-column: span 1;
 }
 .form-field-item input,
 .form-field-item select {
