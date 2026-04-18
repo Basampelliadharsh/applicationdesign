@@ -6,18 +6,18 @@ import { first } from 'rxjs';
 
 @Component({
   selector: 'app-employee-pro',
-  imports: [CommonModule ],
+  imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './employee-pro.html',
   styleUrl: './employee-pro.css',
 })
 export class EmployeePro {
   employeeForm = new FormGroup({
     fullName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
-    dateofbirth: new FormControl('', [Validators.required]),  
+    dateOfBirth: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
-linkdin: new FormControl('', [Validators.required, Validators.pattern('^(https?://)?(www\\.)?linkedin\\.com/.*$')]),
+Linkdin: new FormControl('', [Validators.required, Validators.pattern('^(https?://)?(www\\.)?linkedin\\.com/.*$')]),
 Experience: new FormControl('', [Validators.required, Validators.minLength(1)]),
 company: new FormControl('', [Validators.required]),
 CTC: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
@@ -25,9 +25,28 @@ Notice: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')
 street: new FormControl('', [Validators.required]),
 city: new FormControl('', [Validators.required]),
 state: new FormControl('', [Validators.required]),
-zipCode: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{5}$')]),
+zip: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{5}$')]),
 skills: new FormArray([]),
 
   })
+  constructor() {}
+get skills() {
+  return this.employeeForm.get('skills') as FormArray;  
 
+
+}
+addSkill(skill: string) {
+  if (skill.trim() !== '') {
+    this.skills.push(new FormControl(skill, Validators.required));
+  }
+}
+removeSkill(index: number) {
+  this.skills.removeAt(index);
+} 
+onSubmit() {  if (this.employeeForm.valid) {
+    console.log('Form Submitted', this.employeeForm.value);
+  } else {
+    console.log('Form is invalid');
+  }
+}
 }

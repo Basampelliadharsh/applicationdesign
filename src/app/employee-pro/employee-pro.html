@@ -1,6 +1,7 @@
 <div class="profile-form-container">
   <div class="profile-card">
-    <form class="profile-card-form">
+  employeeForm = new FormGroup
+    <form class="profile-card-form" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
       <h3>job application</h3>
       <section class="form-section personal-info-section">
         <h4>candidate details</h4>
@@ -155,7 +156,7 @@
       </section>
       <section class="form-section address-section">
         <h4>Address</h4>
-        <div class="form-fields-container" formGroupName="address">
+        <div class="form-fields-container">
           <div class="form-field-item">
             <label for="street" class="field-label">
               Street
@@ -221,8 +222,9 @@
                 type="text"
                 class="form-input"
                 placeholder="Enter a technology"
+                #interestInput
               />
-              <button type="button" class="add-skill-button">Add</button>
+              <button type="button" (click)="addSkill(interestInput.value)" class="add-skill-button">Add</button>
             </div>
           </div>
         </div>

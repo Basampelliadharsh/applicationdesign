@@ -6,7 +6,7 @@ import { CommonModule} from '@angular/common';
 
 @Component({
   standalone: true,
-  selector: 'app-signin',
+  selector: 'app-lib-signin',
   imports: [CommonModule, ReactiveFormsModule], 
   templateUrl: './libsignin.html',
   styleUrl: './libsignin.css',
