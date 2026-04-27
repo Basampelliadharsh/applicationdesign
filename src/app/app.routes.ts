@@ -7,6 +7,7 @@ import { Libsignup } from './libsignup/libsignup';
 import { Libhomepage } from './libhomepage/libhomepage';
 import { ProfileFormPractice } from './profile-form-practice/profile-form-practice';
 import { EmployeePro } from './employee-pro/employee-pro';
+import { Eventregform} from './eventregform/eventregform';
 
 
 export const routes: Routes = [
@@ -18,4 +19,5 @@ export const routes: Routes = [
   { path: 'libsignin', component: Libsignin },
   { path: 'profile-form-practice', component: ProfileFormPractice },
   { path: 'employee-pro', component: EmployeePro },
+  { path: 'eventregform', component: Eventregform },  
 ];

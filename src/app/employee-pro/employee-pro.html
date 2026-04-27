@@ -1,6 +1,5 @@
 <div class="profile-form-container">
   <div class="profile-card">
-  employeeForm = new FormGroup
     <form class="profile-card-form" [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
       <h3>job application</h3>
       <section class="form-section personal-info-section">
@@ -28,7 +27,7 @@
             </label>
             <input
               id="dateOfBirth"
-              type="text"
+              type="date"
               class="form-input"
               placeholder="Enter your date of birth"
               formControlName="dateOfBirth"
@@ -226,6 +225,14 @@
               />
               <button type="button" (click)="addSkill(interestInput.value)" class="add-skill-button">Add</button>
             </div>
+            <div class="skills-list" *ngFor="let skill of skills.controls; let i = index">
+        <span>{{ skill.value }}</span>
+        <button
+          type="button"
+          (click)="removeSkill(i)">
+          Remove
+        </button>
+></div>
           </div>
         </div>
       </section>
